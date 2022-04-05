@@ -1,0 +1,93 @@
+$color-blue: #33c3f0;
+$color-white: #FFFFFF;
+.multi-step {
+    padding: 5rem 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    &_wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    &_nav {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        &item {
+            //width: 142px;
+            //max-width: 100%;
+            flex-grow: 1;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            border-bottom: 4px solid #c0c0c0;
+            line-height: 3.4;
+            &::before {
+                content: "\39F";
+                font-weight: bold;
+                color: #c0c0c0;
+                position: absolute;
+                z-index: 2;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -0.8rem;
+                line-height: 1rem;
+                background-color: $color-white;
+                height: 19px;
+                width: 19px;
+                border-radius: 1.2em;
+            }
+            &.active, &.complete { 
+                color: $color-blue;
+                border-color: $color-blue;
+            }
+            &.active {
+                &::before {
+                    content: "\2022";
+                    color: $color-white;
+                    background-color: $color-blue;
+                }
+            }
+            &.complete { 
+                &::before{
+                    content: "\2713";
+                    color: $color-white;
+                    background-color: $color-blue;
+                    font-size: 0.875rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+    &_body {
+        padding-top: 2rem;
+        .form-wrapper {
+            .form-label {
+                font-weight: 700;
+            }
+            .form-control {
+                max-width: 370px;
+            }
+            &_sub_title{
+                font-weight: 400;
+            }
+            a { color: $color-blue; }
+        }
+    }
+    &_btn_listing {
+        margin-top: 1.25rem;
+    }
+    .thank-you {
+        &_title { 
+            font-size: 5rem;
+            font-weight: bold;
+        }
+        &_sub_title { 
+            font-size: 1.5rem;
+        }
+    }
+}

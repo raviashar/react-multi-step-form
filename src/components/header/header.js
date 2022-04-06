@@ -9,7 +9,7 @@ function header() {
                 <Navbar bg="dark" variant="dark">
                     <Container className="justify-content-center">
                         <NavbarBrand className="d-flex align-items-center">
-                            <CustomImg src="logo.svg" alt="React Icon" width="30" height="30" className="mx-100 mr-2"/>{' '}React Bootstrap
+                            <CustomImg src="logo.svg" alt="React Icon" width="30" height="30" className="mx-100 mr-2"/>{' '}React Bootstrap Multi Step Form
                         </NavbarBrand>
                     </Container>
                 </Navbar>

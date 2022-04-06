@@ -29,13 +29,13 @@ function StepFour({next, prev, values, handleInputChange}) {
         const validationErrorData = { ...validation };
         let isValidate = true;
         
-        Object.keys(validation).map((inputName) => {
-            if(values[inputName] === false) {
-                validationErrorData[inputName] = "This field is required";
+        Object.keys(validation).map((inputValue) => {
+            if(values[inputValue] === false) {
+                validationErrorData[inputValue] = "This field is required";
                 isValidate = false;
             }
             else {
-                validationErrorData[inputName] = false;
+                validationErrorData[inputValue] = false;
             }
         });
         setValidation(validationErrorData);

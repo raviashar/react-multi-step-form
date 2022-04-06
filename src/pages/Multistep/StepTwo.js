@@ -36,7 +36,7 @@ function StepTwo({ next, prev, handleInputChange, values }) {
                 isValidate = false;
             }
             else {
-                if(!values[inputValue].match(emailPattern)){
+                if(inputValue === "email" && !values[inputValue].match(emailPattern)){
                     validationErrorData[inputValue] = "Email is not valid";
                     isValidate = false;
                 }
@@ -67,6 +67,7 @@ function StepTwo({ next, prev, handleInputChange, values }) {
                                 placeholder="test@mailbox.com"
                                 defaultValue={values.email}
                                 onChange={(e) => handleChange('email',e)}
+                                className={validation.email ? 'input-invalid' : ''}
                             />
                             { validation.email && (
                                 <Form.Text style={{ color: "#FF2222"}}>
@@ -82,6 +83,7 @@ function StepTwo({ next, prev, handleInputChange, values }) {
                                 placeholder="Confirm Email"
                                 defaultValue={values.confirmEmail}
                                 onChange={(e) => handleChange('confirmEmail',e)}
+                                className={validation.confirmEmail ? 'input-invalid' : ''}
                             />
                             { validation.confirmEmail && (
                                 <Form.Text style={{ color: "#FF2222"}}>

@@ -35,7 +35,7 @@ function StepThree({ next, prev, handleInputChange, values}) {
                 isValidate = false;
             }
             else {
-                if(!values[inputValue].match(passwordPattern)){
+                if(inputValue === "password" && !values[inputValue].match(passwordPattern)){
                     validationErrorData[inputValue] = "Password must be 8 characters long, should contain at least one special char, one numeric, one caps, one small letter";
                     isValidate = false;
                 }
@@ -66,6 +66,7 @@ function StepThree({ next, prev, handleInputChange, values}) {
                                 placeholder="Password"
                                 defaultValue={values.password}
                                 onChange={(e) => handleChange('password',e)}
+                                className={validation.password ? 'input-invalid' : ''}
                             />
                             { validation.password && (
                                 <Form.Text style={{ color: "#FF2222"}}>
@@ -81,6 +82,7 @@ function StepThree({ next, prev, handleInputChange, values}) {
                                 placeholder="Confirm Password"
                                 defaultValue={values.confirmPassword}
                                 onChange={(e) => handleChange('confirmPassword',e)}
+                                className={validation.confirmPassword ? 'input-invalid' : ''}
                             />
                             { validation.confirmPassword && (
                                 <Form.Text style={{ color: "#FF2222"}}>

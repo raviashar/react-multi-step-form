@@ -11,8 +11,11 @@ function Multistep() {
     const [stepCount, setStepCount] = useState(1);
     const [ data, setData ] = useState({
         firstName: "",
+        secondName: "",
         lastName: "",
-        secondName:"",
+        gender: "",
+        city: "",
+        photo: "",
         password: "",
         confirmPassword: "",
         email: "",
